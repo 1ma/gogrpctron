@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  starter:
+    image: dadarek/wait-for-dependencies:latest
+    command: mysql:3306
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      - MYSQL_DATABASE=gogrpctron
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - ./internal/sql:/docker-entrypoint-initdb.d
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data: ~
