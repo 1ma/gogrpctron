@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package gogrpctron;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "internal/grpc";
+
+// Loosely based on the stupid API from https://github.com/1ma/Slim-Doctrine-Demo
+service UserService {
+    rpc CreateUser (google.protobuf.Empty) returns (UserData);
+    rpc ListUsers (google.protobuf.Empty) returns (UserList);
+}
+
+message UserData {
+    int64 Id = 1;
+    string UserName = 2;
+    google.protobuf.Timestamp CreatedAt = 3;
+}
+
+message UserList {
+    repeated UserData users = 1;
+}
