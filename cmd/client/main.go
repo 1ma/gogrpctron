@@ -7,7 +7,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/types/known/emptypb"
 
-	pb "1mahq.com/gogrpctron/internal/grpc"
+	pb "github.com/1ma/gogrpctron/internal/grpc"
 )
 
 func main() {

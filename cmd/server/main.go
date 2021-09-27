@@ -9,7 +9,7 @@ import (
 	"google.golang.org/protobuf/types/known/emptypb"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	pb "1mahq.com/gogrpctron/internal/grpc"
+	pb "github.com/1ma/gogrpctron/internal/grpc"
 )
 
 type userService struct {

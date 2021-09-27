@@ -1,4 +1,4 @@
-module 1mahq.com/gogrpctron
+module github.com/1ma/gogrpctron
 
 go 1.17
 
